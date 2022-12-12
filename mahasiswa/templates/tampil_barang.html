@@ -1,0 +1,32 @@
+{% include 'head.html' %}
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="text-center">
+        <h1>Tampil Barang</h1>
+    </div>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Kode</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Image</th>
+                <th scope="col">Jenis_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Barang in barangs %}   
+            <tr>
+                <td>{{ Barang.kode }}</td>
+                <td>{{ Barang.nama }}</td>
+                <td>{{ Barang.stok }}</td>
+                <td>{{ Barang.harga }}</td>
+                <td>{{ Barang.link_gbr }}</td>
+                <td>{{ Barang.jenis_id_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% include 'footer.html' %}

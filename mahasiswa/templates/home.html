@@ -1,0 +1,30 @@
+{% load static %}
+<!--todo ==> akses folder static-->
+{% include 'head.html' %}
+<!--todo ==> mengambil link pada halaman head-->
+{% include 'navbar.html' %}
+<!--todo ==> mengambil halaman navbar-->
+<section>
+    <div class="header row">
+        <div class="col-6">
+            <img src="{% static 'img/img-header.png' %}">
+        </div>
+        <div class="col-6 text-end align-self-center">
+            <div class="header-text">
+                <h1><span>Furniture</span> Wharehouse</h1>
+            </div>
+            <div class="header-suport">
+                <h1>98%</h1>
+            </div>
+            <div class="container btn-header">
+                <button type="button" class="btn btn-primary float-end fw-bold"
+                    style="border-radius: 20px;">Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="content container mt-5">
+        <h1>Enjoy Furniture</h1>
+        {% include 'card_produk.html' %}
+    </div>
+</section>
+{% include 'footer.html' %}

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <!-- css core bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:ital,wght@1,300&family=Oleo+Script+Swash+Caps&family=Overlock:ital,wght@0,400;0,700;0,900;1,900&family=Poppins:ital,wght@0,200;0,300;0,600;0,700;0,800;1,400;1,500;1,600&family=Roboto:ital,wght@0,500;1,500&family=Rubik+Mono+One&display=swap"
+        rel="stylesheet">
+
+    <!-- css manualy -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/produk.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <!-- style -->
+    <style>
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+</head>

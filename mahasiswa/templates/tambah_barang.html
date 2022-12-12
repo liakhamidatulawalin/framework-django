@@ -1,0 +1,10 @@
+{% load static %}
+{% include 'head.html' %}
+{% include 'navbar.html' %}
+<section id="form" class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</section>

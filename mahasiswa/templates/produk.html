@@ -1,0 +1,26 @@
+{% load static %}
+<!--todo ==> akses folder static-->
+{% include 'head.html' %}
+<!--todo ==> mengambil link pada head-->
+{% include 'navbar.html' %}
+<!--todo ==> mengambil halaman navbar-->
+<section>
+    <div class="container">
+        <div class="head-produk mt-3">
+            <h1>All Product Furniture for You</h1>
+            <p>Semua produk yang anda butuhkan ada di sini</p>
+        </div>
+        <div class="btn-category mt-5 text-center">
+            <button type="button" class="btn btn-outline-primary active">All</button>
+            <button type="button" class="btn btn-outline-primary">Wardrobe</button>
+            <button type="button" class="btn btn-outline-primary">Bed</button>
+            <button type="button" class="btn btn-outline-primary">Chair</button>
+            <button type="button" class="btn btn-outline-primary">Table</button>
+            <button type="button" class="btn btn-outline-primary">Chiken set</button>
+        </div>
+        <div class="all_produk">
+            {% include 'card_produk.html' %}
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
