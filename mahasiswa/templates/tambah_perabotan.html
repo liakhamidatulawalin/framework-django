@@ -1,0 +1,22 @@
+{% load static %}
+{% include 'head.html' %}
+{% include 'navbar.html' %}
+<section id="form" class="container">
+    <h2>Tambah Perabotan</h2>
+
+    {% for message in messages %}
+
+    {% if message %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+
+
+    {% endfor %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Upload</button>
+        <a href="{% url 'perabotan' %}" class="btn btn-warning">Back</a>
+    </form>
+</section>

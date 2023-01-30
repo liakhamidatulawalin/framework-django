@@ -3,25 +3,20 @@
 {% include 'navbar.html' %}
 <section id="form" class="container">
     <center>
-        <h2 class="mt-5 fw-bolder">Tambah Barang</h2>
+        <h2 class="mt-5 fw-bolder">Update Perabotan</h2>
 
         {% for message in messages %}
         <div class="alert alert-primary" role="alert">
             {{ message }}
         </div>
         {% if message %}
-
         {% endif %}
-
-
         {% endfor %}
-
     </center>
-
-    <form action="" method="post">
+    <form action="{% url 'ubahPra' perabotans.id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Upload</button>
-        <a href="{% url 'barang' %}" class="btn btn-warning">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{% url 'perabotan' %}" class="btn btn-warning">Back</a>
     </form>
 </section>

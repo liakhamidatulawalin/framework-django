@@ -1,0 +1,63 @@
+{% include 'head.html' %}
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="text-center mt-4">
+        <h1>Tampil Aksesoris</h1>
+    </div>
+    {% for message in messages %}
+
+    {% if message %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+
+    {% endfor %}
+    <a href="{% url 'addAkses' %}" class="btn btn-primary">Tambah Aksesoris</a>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Kode</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aksesoris in Aksesoriss %}
+            <tr>
+                <td>{{ aksesoris.kode }}</td>
+                <td>{{ aksesoris.nama }}</td>
+                <td>{{ aksesoris.stok }}</td>
+                <td>{{ aksesoris.harga }}</td>
+                <td><a href="{% url 'ubahAkses' aksesoris.id %}" class="btn btn-warning">Edit</a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#HapusAksesoris-{{ aksesoris.id }}">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            <!-- todo : Modals -->
+            <div class="modal fade" id="HapusAksesoris-{{ aksesoris.id }}" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Yakin ingin dihapus ?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Kode Barang : {{ aksesoris.kode }} <br>
+                            Nama Barang : {{ aksesoris.nama }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="{% url 'hapus_akses' aksesoris.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% include 'footer.html' %}
